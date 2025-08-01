@@ -1,0 +1,106 @@
+.about {
+    background-color: var(--brick);
+}
+
+/* Container wrapper */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+/* Header text styles */
+.heading {
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.heading-sub-text {
+    color: var(--beige);
+    font-size: 1.1rem;
+}
+
+.heading-text {
+    color: var(--beige);
+    font-size: 2.5rem;
+}
+
+/* Layout styling */
+.split-about {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* ✅ this centers the items vertically */
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Text content styling */
+.about-content {
+    flex: 1 1 500px;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: var(--gold);
+}
+
+/* Image styling */
+.about-img {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.about-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    filter: brightness(100%);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 1rem;
+}
+
+.about-img img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive: Tablets and below */
+@media screen and (max-width: 1000px) {
+    .split-about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-content {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Responsive: Phones */
+@media screen and (max-width: 500px) {
+    .about-img img {
+        width: 90%;
+        height: auto;
+    }
+
+    .heading-sub-text {
+        font-size: 1rem;
+    }
+
+    .heading-text {
+        font-size: 1.8rem;
+    }
+
+    .about-content {
+        font-size: 0.9rem;
+    }
+}
