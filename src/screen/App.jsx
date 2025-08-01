@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import './styles/App.css';
+import '../styles/App.css';
 import { motion } from "framer-motion";
-import HomePage from "./pages/HomePage.jsx";
+import HomePage from "../pages/HomePage";
 
 function App() {
   const [loading, setLoading] = useState(true);

@@ -1,0 +1,56 @@
+.skills {
+    background-color: #642e25;
+}
+
+.skills-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Skill card styling */
+.skill-card {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.heading-text {
+    color: var(--beige);
+}
+
+/* Icon styling */
+.skill-icon {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: 0.5rem;
+    color: var(--gold)
+}
+
+/* Description text */
+.skill-desc {
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+/* Optional: fine-tune for ultra-small devices */
+@media screen and (max-width: 400px) {
+    .skill-icon {
+        font-size: 1.2rem;
+    }
+
+    .skill-desc {
+        font-size: 0.8rem;
+    }
+}
