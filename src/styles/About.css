@@ -1,5 +1,6 @@
 .about {
     background-color: var(--brick);
+    margin-bottom: 3rem;
 }
 
 /* Container wrapper */
@@ -42,8 +43,9 @@
     flex: 1 1 500px;
     font-family: "Poppins", sans-serif;
     line-height: 1.7;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--gold);
+    margin-top: -1rem;
 }
 
 /* Image styling */
