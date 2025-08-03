@@ -57,6 +57,22 @@
     text-align: center;
     background-color: transparent;
     box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+.skill-card:hover .skill-icon {
+    border-color: var(--beige);
+    box-shadow: 0 4px 8px rgba(198, 147, 75, 0.3);
+    transform: scale(1.1);
+}
+
+.skill-card:hover .skill-desc {
+    color: var(--beige);
+    transform: scale(1.05);
 }
 
 .heading-text {
@@ -65,19 +81,29 @@
     font-size: 3rem;
 }
 
-/* Icon styling */
+/* Icon styling with circular border */
 .skill-icon {
     font-size: clamp(2.5rem, 4vw, 4rem);
     margin-bottom: 0.5rem;
-    color: var(--gold)
+    color: var(--gold);
+    width: clamp(6rem, 8vw, 8rem);
+    height: clamp(6rem, 8vw, 8rem);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 /* Description text */
 .skill-desc {
-    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
     letter-spacing: 1px;
     color: var(--gold);
     font-family: 'Cinzel', serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 /* Responsive design */
@@ -105,6 +131,17 @@
     .heading-text {
         font-size: 2.5rem;
     }
+    
+    .skill-icon {
+        border-width: 1px;
+        width: clamp(5rem, 7vw, 7rem);
+        height: clamp(5rem, 7vw, 7rem);
+    }
+    
+    .skill-desc {
+        font-size: clamp(1rem, 1.6vw, 1.3rem);
+        font-weight: 600;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -124,16 +161,30 @@
     .heading-text {
         font-size: 2rem;
     }
+    
+    .skill-icon {
+        border-width: 1px;
+        width: clamp(4rem, 6vw, 6rem);
+        height: clamp(4rem, 6vw, 6rem);
+    }
+    
+    .skill-desc {
+        font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+        font-weight: 600;
+    }
 }
 
 /* Optional: fine-tune for ultra-small devices */
 @media screen and (max-width: 400px) {
     .skill-icon {
         font-size: 1.2rem;
+        width: clamp(3.5rem, 5vw, 5rem);
+        height: clamp(3.5rem, 5vw, 5rem);
     }
 
     .skill-desc {
-        font-size: 0.8rem;
+        font-size: clamp(0.8rem, 1.2vw, 1rem);
+        font-weight: 600;
     }
     
     .heading-divider {
