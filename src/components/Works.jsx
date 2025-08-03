@@ -3,9 +3,13 @@ import "../styles/Works.css";
 import { motion } from "framer-motion";
 import { MLData, FSData } from "../data/WorkData";
 import WorkCard from "./WorkCard";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const Works = () => {
-	const [activeTab, setActiveTab] = useState("react");
+	const [currentIndex, setCurrentIndex] = useState(0);
+	
+	// Combine all works into a single array
+	const allWorks = [...MLData, ...FSData];
 
 	const fade = {
 		opacity: 1,
@@ -14,10 +18,17 @@ const Works = () => {
 		},
 	};
 
-	const tabData = [
-		{ id: "react", label: "ML/AI", data: MLData },
-		{ id: "vue", label: "Backend", data: FSData },
-	];
+	const nextCard = () => {
+		setCurrentIndex((prevIndex) => 
+			prevIndex === allWorks.length - 1 ? 0 : prevIndex + 1
+		);
+	};
+
+	const prevCard = () => {
+		setCurrentIndex((prevIndex) => 
+			prevIndex === 0 ? allWorks.length - 1 : prevIndex - 1
+		);
+	};
 
 	return (
 		<div className='works' id='works'>
@@ -31,32 +42,41 @@ const Works = () => {
 					<div className='heading-divider'></div>
 				</motion.div>
 
-				<div className='tabs'>
-					{tabData.map((tab) => (
-						<button
-							key={tab.id}
-							className={`tab ${activeTab === tab.id ? "active" : ""}`}
-							onClick={() => setActiveTab(tab.id)}>
-							{tab.label}
-						</button>
-					))}
-				</div>
-
 				<motion.div
-					className='works-box'
+					className='works-carousel'
 					initial={{ opacity: 0 }}
 					whileInView={fade}>
-					{tabData.map(
-						(tab) =>
-							activeTab === tab.id && (
-								<React.Fragment key={tab.id}>
-									{tab.data.map((w, index) => (
-										<WorkCard w={w} tabId={tab.id} key={index} />
-									))}
-								</React.Fragment>
-							)
-					)}
+					<button 
+						className='carousel-arrow carousel-arrow-left'
+						onClick={prevCard}
+						aria-label="Previous work"
+					>
+						<IoChevronBack />
+					</button>
+					
+					<div className='works-card-container'>
+						<WorkCard w={allWorks[currentIndex]} />
+					</div>
+					
+					<button 
+						className='carousel-arrow carousel-arrow-right'
+						onClick={nextCard}
+						aria-label="Next work"
+					>
+						<IoChevronForward />
+					</button>
 				</motion.div>
+
+				<div className='carousel-indicators'>
+					{allWorks.map((_, index) => (
+						<button
+							key={index}
+							className={`indicator ${index === currentIndex ? 'active' : ''}`}
+							onClick={() => setCurrentIndex(index)}
+							aria-label={`Go to work ${index + 1}`}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	);
