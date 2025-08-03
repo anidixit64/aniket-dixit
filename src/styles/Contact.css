@@ -10,6 +10,23 @@
 	margin-top: 2rem; /* Optional: spacing under the heading */
 }
 
+/* Heading divider styling */
+.heading-divider {
+    width: 50%;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(198, 147, 75, 0.3);
+}
+
+/* Section title styling */
+.heading-text {
+    color: var(--beige);
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+}
+
 .contact-heading {
 	margin-bottom: 2rem;
 }

@@ -3,17 +3,50 @@
 }
 
 .skills-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     padding: 1rem;
+}
+
+/* Heading divider styling */
+.heading-divider {
+    width: 50%;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(198, 147, 75, 0.3);
+}
+
+/* Skill row styling */
+.skill-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-row-header {
+    color: var(--beige);
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.skill-row-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
 }
 
 /* Skill card styling */
 .skill-card {
     padding: 1.5rem;
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
     margin: 0 auto;
     cursor: pointer;
     border-radius: 5px;
@@ -28,6 +61,8 @@
 
 .heading-text {
     color: var(--beige);
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
 }
 
 /* Icon styling */
@@ -42,6 +77,53 @@
     font-size: clamp(0.9rem, 1.5vw, 1.3rem);
     letter-spacing: 1px;
     color: var(--gold);
+    font-family: 'Cinzel', serif;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+    .skill-row-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skill-row-header {
+        font-size: 1.5rem;
+    }
+    
+    .skill-row-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .heading-divider {
+        width: 60%;
+        height: 1.5px;
+    }
+    
+    .heading-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skill-row-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skill-row-header {
+        font-size: 1.3rem;
+    }
+    
+    .heading-divider {
+        width: 70%;
+        height: 1.5px;
+    }
+    
+    .heading-text {
+        font-size: 2rem;
+    }
 }
 
 /* Optional: fine-tune for ultra-small devices */
@@ -52,5 +134,14 @@
 
     .skill-desc {
         font-size: 0.8rem;
+    }
+    
+    .heading-divider {
+        width: 80%;
+        height: 1px;
+    }
+    
+    .heading-text {
+        font-size: 1.8rem;
     }
 }

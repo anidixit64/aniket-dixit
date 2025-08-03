@@ -28,6 +28,7 @@ const Works = () => {
 					viewport={{ once: true }}
 					className='heading'>
 					<p className='heading-text'>Writings</p>
+					<div className='heading-divider'></div>
 				</motion.div>
 
 				<div className='tabs'>

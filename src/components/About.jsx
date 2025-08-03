@@ -23,6 +23,7 @@ const About = () => {
         >
           <p className="heading-sub-text">Who I am</p>
           <p className="heading-text">About Me</p>
+          <div className="heading-divider"></div>
         </motion.div>
 
         <div className="split-about">

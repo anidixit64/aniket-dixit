@@ -13,7 +13,7 @@
 
 /* Header text styles */
 .heading {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Cinzel', serif;
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -25,7 +25,17 @@
 
 .heading-text {
     color: var(--beige);
-    font-size: 2.5rem;
+    font-size: 3rem;
+}
+
+/* Heading divider styling */
+.heading-divider {
+    width: 50%;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(198, 147, 75, 0.3);
 }
 
 /* Layout styling */
@@ -41,7 +51,7 @@
 /* Text content styling */
 .about-content {
     flex: 1 1 500px;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Cinzel', serif;
     line-height: 1.7;
     font-size: 1.2rem;
     color: var(--gold);
