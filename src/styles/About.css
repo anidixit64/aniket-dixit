@@ -1,5 +1,6 @@
 .about {
     background-color: var(--brick);
+    margin-bottom: 3rem;
 }
 
 /* Container wrapper */
@@ -12,7 +13,7 @@
 
 /* Header text styles */
 .heading {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Cinzel', serif;
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -24,7 +25,17 @@
 
 .heading-text {
     color: var(--beige);
-    font-size: 2.5rem;
+    font-size: 3rem;
+}
+
+/* Heading divider styling */
+.heading-divider {
+    width: 50%;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(198, 147, 75, 0.3);
 }
 
 /* Layout styling */
@@ -40,16 +51,18 @@
 /* Text content styling */
 .about-content {
     flex: 1 1 500px;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Cinzel', serif;
     line-height: 1.7;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--gold);
+    margin-top: -1rem;
 }
 
 /* Image styling */
 .about-img {
     flex: 1 1 300px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -70,6 +83,60 @@
 
 .about-img img:hover {
     transform: scale(1.1);
+}
+
+/* Social buttons styling */
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.social-button {
+    text-decoration: none;
+    color: var(--beige);
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: 3px solid var(--gold);
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s transform ease-in-out, 0.8s color ease-out;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.social-button::after {
+    background-color: var(--gold);
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0);
+    transform-origin: top right;
+    transition: 0.8s transform ease-out;
+    will-change: transform;
+    z-index: -1;
+}
+
+.social-button:hover::after {
+    transform: translate(0, 0);
+}
+
+.social-button:hover {
+    color: var(--brick);
+    will-change: transform;
 }
 
 /* Responsive: Tablets and below */
@@ -102,5 +169,12 @@
 
     .about-content {
         font-size: 0.9rem;
+    }
+
+    .social-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        padding: 0.8rem;
     }
 }

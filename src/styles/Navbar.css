@@ -53,7 +53,7 @@
 .profile-name {
 	font-size: 1rem;
 	font-weight: 600;
-	font-family: "Poppins", sans-serif;
+	font-family: 'Cinzel', serif;
 	text-decoration: none;
 	color: var(--brick);
 	margin-bottom: 1rem;
@@ -135,5 +135,5 @@
 .copyright {
 	color: var(--brick);
 	font-size: 65%;
-	font-family: "Quicksand", sans-serif;
+	font-family: 'Cinzel', serif;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import "../styles/About.css";
 import { motion } from "framer-motion";
 import ProfileImg from '../images/self.jpg';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const About = () => {  
 
@@ -22,6 +23,7 @@ const About = () => {
         >
           <p className="heading-sub-text">Who I am</p>
           <p className="heading-text">About Me</p>
+          <div className="heading-divider"></div>
         </motion.div>
 
         <div className="split-about">
@@ -45,6 +47,24 @@ const About = () => {
             className="about-img"
           >
             <img src={ProfileImg} alt="Profile" />
+            <div className="social-buttons">
+              <a 
+                href="https://github.com/anidixit64" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-button github-button"
+              >
+                <FaGithub />
+              </a>
+              <a 
+                href="https://linkedin.com/in/aniket-dixit" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-button linkedin-button"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>

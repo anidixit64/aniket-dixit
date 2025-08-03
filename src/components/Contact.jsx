@@ -84,6 +84,7 @@ const Contact = () => {
 						viewport={{ once: true }}>
 						<p className='heading-sub-text'>Hire Me</p>
 						<p className='heading-text'>Get in Touch</p>
+						<div className='heading-divider'></div>
 					</motion.div>
 					<div className='contact-box'>
 						<motion.div

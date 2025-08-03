@@ -18,6 +18,23 @@
 	width: 100%;
 }
 
+/* Heading divider styling */
+.heading-divider {
+    width: 50%;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(198, 147, 75, 0.3);
+}
+
+/* Section title styling */
+.heading-text {
+    color: var(--beige);
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+}
+
 .writings-card {
 	background-color: var(--gold);
 	color: var(--brick);
