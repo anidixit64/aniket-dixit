@@ -38,26 +38,31 @@
 .skill-row-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
     justify-items: center;
+    align-items: start;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Skill card styling */
 .skill-card {
-    padding: 1.5rem;
+    padding: 1rem;
     width: 100%;
-    max-width: 150px;
+    max-width: 160px;
     margin: 0 auto;
     cursor: pointer;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     background-color: transparent;
     box-sizing: border-box;
     transition: all 0.3s ease;
+    height: 200px;
 }
 
 .skill-card:hover {
@@ -84,26 +89,39 @@
 /* Icon styling with circular border */
 .skill-icon {
     font-size: clamp(2.5rem, 4vw, 4rem);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: var(--gold);
-    width: clamp(6rem, 8vw, 8rem);
-    height: clamp(6rem, 8vw, 8rem);
+    width: clamp(5rem, 7vw, 7rem);
+    height: clamp(5rem, 7vw, 7rem);
     border: 1px solid var(--gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 /* Description text */
 .skill-desc {
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-    letter-spacing: 1px;
+    font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+    letter-spacing: 0.5px;
     color: var(--gold);
     font-family: 'Cinzel', serif;
     font-weight: 600;
     transition: all 0.3s ease;
+    margin-top: auto;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+    word-wrap: break-word;
+    hyphens: auto;
+    padding: 0.5rem;
 }
 
 /* Responsive design */
