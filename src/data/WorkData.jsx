@@ -21,7 +21,7 @@ export const MLData = [
 	{
 		title: "Alexandria",
 		desc: "AI powered bibliography generator for academic and casual sources. Powered by Wikipedia parseing and filtering",
-		tech: ["Python", "Bash",  "React.js", "Javascript", "HTML"],
+		tech: ["Python", "Javascript", "HTML", "React.js", "CSS"],
 		gitlink: "https://github.com/anidixit64/fifa-manager",
 		site: "https://fifa-manager-black.vercel.app",
 	},
@@ -63,3 +63,6 @@ export const FSData = [
 		site: "//github.com/anidixit64/Job-Scraper",
 	},
 ];
+
+// Combine all works into a single array
+export const allWorks = [...MLData, ...FSData];
