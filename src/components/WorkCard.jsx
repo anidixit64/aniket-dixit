@@ -1,13 +1,24 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FiFolder, FiGithub } from "react-icons/fi";
+import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import linguisticsImg from "../images/linguistics.jpg";
+import parchmentImg from "../images/parchment.jpg";
+import selfImg from "../images/self.jpg";
 
 const WorkCard = ({ w }) => {
 	const titleRef = useRef(null);
 	const descRef = useRef(null);
 	const [titleFontSize, setTitleFontSize] = useState(2.6);
 	const [descFontSize, setDescFontSize] = useState(1.4);
+
+	// Function to get the correct image based on the image path
+	const getImageSrc = (imagePath) => {
+		if (imagePath.includes('linguistics')) return linguisticsImg;
+		if (imagePath.includes('parchment')) return parchmentImg;
+		if (imagePath.includes('self')) return selfImg;
+		return linguisticsImg; // fallback
+	};
 
 	// Function to adjust font size to fit container
 	const adjustFontSize = (element, targetHeight, baseFontSize) => {
@@ -92,10 +103,17 @@ const WorkCard = ({ w }) => {
 
 	return (
 		<Link to={w.site} target='_blank' className='work-link-group'>
-			<div className='works-card'>
+			<div 
+				className='works-card'
+				style={{
+					backgroundImage: `url(${getImageSrc(w.image)})`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+					backgroundRepeat: 'no-repeat'
+				}}
+			>
 				<div className='works-container'>
 					<div className='top-work'>
-						<FiFolder className='work-folder' />
 						<div className='right'>
 							{w.gitlink && (
 								<Link className='work-git' to={w.gitlink} target='_blank'>

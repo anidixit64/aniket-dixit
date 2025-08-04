@@ -2,8 +2,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 2rem;
-	padding: 2rem 0;
+	justify-content: center;
+	height: 100%;
+	padding: 2rem;
+	position: relative;
 }
 
 .works-header {
@@ -16,9 +18,11 @@
 	align-items: center;
 	justify-content: center;
 	gap: 2rem;
+	margin-top: 4rem;
 	width: 100%;
 	max-width: 1200px;
 	position: relative;
+	overflow: hidden;
 }
 
 .works-card-container {
@@ -115,21 +119,30 @@
 }
 
 .works-card {
-	background-color: var(--gold);
-	color: var(--brick);
-	border-radius: 5px;
 	position: relative;
-	padding: 2.5rem 5rem;
 	width: 750px;
-	max-width: 750px;
-	margin: 0 auto;
 	height: 625px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	cursor: pointer;
+	background: var(--beige);
+	border-radius: 20px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
+	overflow: hidden;
+}
+
+.works-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(rgba(198, 147, 75, 0.85), rgba(198, 147, 75, 0.85));
+	z-index: 1;
+}
+
+.works-card > * {
+	position: relative;
+	z-index: 2;
 }
 
 .works-card:hover {
@@ -138,16 +151,20 @@
 }
 
 .top-work {
+	position: absolute;
+	top: 0;
+	right: 0;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 60px;
+	justify-content: flex-end;
+	align-items: flex-start;
+	padding: 1rem;
+	z-index: 10;
 }
 
-.top-work .right {
+.right {
 	display: flex;
 	gap: 1rem;
+	align-items: center;
 }
 
 .mid-work {
@@ -157,8 +174,8 @@
 	justify-content: center;
 	text-align: center;
 	width: 100%;
-	height: 200px;
-	margin-bottom: 1.5rem;
+	margin-top: 3rem;
+	margin-bottom: 2rem;
 }
 
 .work-title {
@@ -166,28 +183,33 @@
 	font-size: clamp(1.5rem, 2.5vw, 2.5rem);
 	font-weight: 600;
 	color: var(--brick);
-	margin-bottom: 1rem;
-	height: 80px;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	height: auto;
+	min-height: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	text-align: center;
 	line-height: 1.2;
+	overflow: visible;
+	white-space: normal;
 }
 
 .work-desc {
 	font-family: 'Cinzel', serif;
-	font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
 	color: var(--brick);
-	line-height: 1.6;
-	height: 100px;
+	margin-top: 8rem;
+	height: auto;
+	min-height: 100px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	padding: 0 1rem;
+	text-align: center;
+	line-height: 1.4;
+	overflow: visible;
+	white-space: normal;
 }
 
 .work-folder {
@@ -197,23 +219,34 @@
 
 .work-git,
 .work-link {
-	font-size: 2rem;
-	color: var(--brick);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	background-color: var(--brick);
+	color: var(--gold);
+	text-decoration: none;
 	transition: all 0.3s ease;
+	font-size: 1.5rem;
 }
 
 .work-git:hover,
 .work-link:hover {
-	color: var(--beige);
 	transform: scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .bottom-work {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	gap: 0.5rem;
-	width: 100%;
-	height: 120px;
+	height: auto;
+	min-height: 120px;
+	margin-top: 6rem;
 }
 
 .bottom-work .tech-row {
@@ -222,6 +255,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	min-height: 50px;
+	flex-wrap: wrap;
 }
 
 .bottom-work .tech-row:first-child {
