@@ -102,62 +102,60 @@ const WorkCard = ({ w }) => {
 	const { topRow, bottomRow, centerSingle } = distributeTechTags(w.tech);
 
 	return (
-		<Link to={w.site} target='_blank' className='work-link-group'>
-			<div 
-				className='works-card'
-				style={{
-					backgroundImage: `url(${getImageSrc(w.image)})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-					backgroundRepeat: 'no-repeat'
-				}}
-			>
-				<div className='works-container'>
-					<div className='top-work'>
-						<div className='right'>
-							{w.gitlink && (
-								<Link className='work-git' to={w.gitlink} target='_blank'>
-									<FiGithub />
-								</Link>
-							)}
-							<Link className='work-link' to={w.site} target='_blank'>
-								<IoOpenOutline />
+		<div 
+			className='works-card'
+			style={{
+				backgroundImage: `url(${getImageSrc(w.image)})`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				backgroundRepeat: 'no-repeat'
+			}}
+		>
+			<div className='works-container'>
+				<div className='top-work'>
+					<div className='right'>
+						{w.gitlink && (
+							<Link className='work-git' to={w.gitlink} target='_blank'>
+								<FiGithub />
 							</Link>
-						</div>
+						)}
+						<Link className='work-link' to={w.site} target='_blank'>
+							<IoOpenOutline />
+						</Link>
 					</div>
-					<div className='mid-work'>
-						<p 
-							ref={titleRef}
-							className='work-title'
-							style={{ fontSize: `${titleFontSize}rem` }}
-						>
-							{w.title}
-						</p>
-						<p 
-							ref={descRef}
-							className='work-desc'
-							style={{ fontSize: `${descFontSize}rem` }}
-						>
-							{w.desc}
-						</p>
+				</div>
+				<div className='mid-work'>
+					<p 
+						ref={titleRef}
+						className='work-title'
+						style={{ fontSize: `${titleFontSize}rem` }}
+					>
+						{w.title}
+					</p>
+					<p 
+						ref={descRef}
+						className='work-desc'
+						style={{ fontSize: `${descFontSize}rem` }}
+					>
+						{w.desc}
+					</p>
+				</div>
+				<div className='bottom-work'>
+					{/* Always render top row, even if empty */}
+					<div className='tech-row'>
+						{topRow.map((tech, index) => (
+							<small key={index}>{tech}</small>
+						))}
 					</div>
-					<div className='bottom-work'>
-						{/* Always render top row, even if empty */}
-						<div className='tech-row'>
-							{topRow.map((tech, index) => (
-								<small key={index}>{tech}</small>
-							))}
-						</div>
-						{/* Always render bottom row */}
-						<div className={`tech-row ${centerSingle ? 'center-single' : ''}`}>
-							{bottomRow.map((tech, index) => (
-								<small key={index + topRow.length}>{tech}</small>
-							))}
-						</div>
+					{/* Always render bottom row */}
+					<div className={`tech-row ${centerSingle ? 'center-single' : ''}`}>
+						{bottomRow.map((tech, index) => (
+							<small key={index + topRow.length}>{tech}</small>
+						))}
 					</div>
 				</div>
 			</div>
-		</Link>
+		</div>
 	);
 };
 

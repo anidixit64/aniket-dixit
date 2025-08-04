@@ -127,7 +127,6 @@
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
 	overflow: hidden;
-	pointer-events: none;
 }
 
 .works-card::before {
@@ -152,6 +151,7 @@
 	z-index: 2;
 	opacity: 0;
 	transition: opacity 0.3s ease;
+	pointer-events: none;
 }
 
 .works-card:hover > * {
