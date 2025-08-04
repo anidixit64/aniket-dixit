@@ -127,6 +127,7 @@
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
 	overflow: hidden;
+	pointer-events: none;
 }
 
 .works-card::before {
@@ -138,11 +139,23 @@
 	bottom: 0;
 	background: linear-gradient(rgba(198, 147, 75, 0.85), rgba(198, 147, 75, 0.85));
 	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.works-card:hover::before {
+	opacity: 1;
 }
 
 .works-card > * {
 	position: relative;
 	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.works-card:hover > * {
+	opacity: 1;
 }
 
 .works-card:hover {
@@ -194,6 +207,8 @@
 	line-height: 1.2;
 	overflow: visible;
 	white-space: normal;
+	position: relative;
+	top: 50px;
 }
 
 .work-desc {
@@ -230,6 +245,7 @@
 	text-decoration: none;
 	transition: all 0.3s ease;
 	font-size: 1.5rem;
+	pointer-events: auto;
 }
 
 .work-git:hover,
@@ -247,6 +263,8 @@
 	height: auto;
 	min-height: 120px;
 	margin-top: 6rem;
+	position: relative;
+	top: -30px;
 }
 
 .bottom-work .tech-row {
