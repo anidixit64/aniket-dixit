@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import linguisticsImg from "../images/linguistics.jpg";
-import parchmentImg from "../images/parchment.jpg";
-import selfImg from "../images/self.jpg";
+
 
 const WorkCard = ({ w }) => {
 	const titleRef = useRef(null);
@@ -14,10 +12,10 @@ const WorkCard = ({ w }) => {
 
 	// Function to get the correct image based on the image path
 	const getImageSrc = (imagePath) => {
-		if (imagePath.includes('linguistics')) return linguisticsImg;
-		if (imagePath.includes('parchment')) return parchmentImg;
-		if (imagePath.includes('self')) return selfImg;
-		return linguisticsImg; // fallback
+		if (imagePath.includes('linguistics')) return "/images/linguistics.jpg";
+		if (imagePath.includes('parchment')) return "/images/parchment.jpg";
+		if (imagePath.includes('self')) return "/images/self.jpg";
+		return "/images/linguistics.jpg"; // fallback
 	};
 
 	// Function to adjust font size to fit container

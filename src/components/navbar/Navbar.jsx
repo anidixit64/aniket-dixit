@@ -4,7 +4,7 @@ import { FaHome, FaLaptop } from "react-icons/fa";
 import { BiBookContent, BiServer, BiEnvelope } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { Link } from "react-scroll";
-import ProfileImg from "../../images/self.jpg";
+
 import NavLinks from "./NavLinks.jsx";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
@@ -45,7 +45,7 @@ const Navbar = ({ nav, handleNav }) => {
 					className='navbar-container'>
 					<div className='top-details'>
 						<div className='img__cover'>
-							<img src={ProfileImg} alt='Main' className='profile-pic-small' />
+							<img src="/images/self.jpg" alt='Main' className='profile-pic-small' />
 						</div>
 						<Link
 							activeClass='active'

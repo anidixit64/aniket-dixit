@@ -1,7 +1,6 @@
 import React from 'react';
 import "../styles/About.css";
 import { motion } from "framer-motion";
-import ProfileImg from '../images/self.jpg';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const About = () => {  
@@ -46,7 +45,7 @@ const About = () => {
             whileInView={horizontal}
             className="about-img"
           >
-            <img src={ProfileImg} alt="Profile" />
+            <img src="/images/self.jpg" alt="Profile" />
             <div className="social-buttons">
               <a 
                 href="https://github.com/anidixit64" 
