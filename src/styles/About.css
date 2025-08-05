@@ -139,6 +139,8 @@
     will-change: transform;
 }
 
+
+
 /* Responsive: Tablets and below */
 @media screen and (max-width: 1000px) {
     .split-about {
@@ -177,4 +179,6 @@
         font-size: 1rem;
         padding: 0.8rem;
     }
+
+
 }
