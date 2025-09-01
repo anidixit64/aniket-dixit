@@ -12,9 +12,9 @@ import { SiPytorch, SiFlask, SiTensorflow, SiTableau, SiPrometheus, SiCplusplus,
 import { VscTerminalBash} from "react-icons/vsc";
 
 export const SkillsData = [
-	// Row 1
+	// Programming Languages
 	{
-		header: "Header 1",
+		header: "Programming Languages",
 		skills: [
 			{
 				name: "Python",
@@ -42,9 +42,9 @@ export const SkillsData = [
 			},
 		]
 	},
-	// Row 2
+	// Machine Learning & Data Science
 	{
-		header: "Header 2",
+		header: "Machine Learning & Data Science",
 		skills: [
 			{
 				name: "PyTorch",
@@ -72,9 +72,9 @@ export const SkillsData = [
 			},
 		]
 	},
-	// Row 3
+	// Web Development & DevOps
 	{
-		header: "Header 3",
+		header: "Web Development & DevOps",
 		skills: [
 			{
 				name: "React",

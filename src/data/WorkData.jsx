@@ -10,7 +10,7 @@ export const MLData = [
 		],
 		gitlink: "//github.com/anidixit64/vivre",
 		site: "https://vivre.readthedocs.io/en/latest/",
-		image: "/src/images/linguistics.jpg",
+		image: "/public/images/vivre-icon.png",
 	},
 	{
 		title: "Fifa Career Manager",
@@ -18,7 +18,7 @@ export const MLData = [
 		tech: ["Javascript", "HTML", "Next.js"],
 		gitlink: "https://github.com/anidixit64/fifa-manager",
 		site: "https://fifa-manager-black.vercel.app",
-		image: "/src/images/parchment.jpg",
+		image: "/public/images/fifa-manager.png",
 	},
 	{
 		title: "Alexandria",
@@ -26,7 +26,7 @@ export const MLData = [
 		tech: ["Python", "Javascript", "HTML", "React.js", "CSS"],
 		gitlink: "https://github.com/anidixit64/fifa-manager",
 		site: "https://fifa-manager-black.vercel.app",
-		image: "/src/images/self.jpg",
+		image: "/public/images/alexandria.png",
 	},
 	{
 		title: "HealthNav",
@@ -34,7 +34,7 @@ export const MLData = [
 		tech: ["Javascript", "HTML/CSS", "GoogleAPI", "Llama3", "OpenBio-LLM"],
 		gitlink: "//github.com/aarushisi/healthnav-webdev",
 		site: "//github.com/aarushisi/healthnav-webdev",
-		image: "/src/images/linguistics.jpg",
+		image: "/public/images/healthnav.png",
 	},
 	{
 		title: "Pro Interview Bot",
@@ -42,32 +42,7 @@ export const MLData = [
 		tech: ["OpenAI", "React.js", "CSS", "NLTK", "PyTorch"],
 		gitlink: "https://github.com/anidixit64/Interview-Evaluator",
 		site: "https://github.com/anidixit64/Interview-Evaluator",
-		image: "/src/images/parchment.jpg",
-	},
-];
-
-export const FSData = [
-	{
-		title: "Certamen",
-		desc: "NAQT based Quiz Bowl Simulator and Trivia Game",
-		tech: [
-			"Python",
-			"Flask", 
-			"PostgreSQL", 
-			"NLTK", 
-			"Javascript",
-		],
-		gitlink: "//github.com/anidixit64/Certamen-Quiz-Bowl-Simulator",
-		site: "//github.com/anidixit64/Certamen-Quiz-Bowl-Simulator",
-		image: "/src/images/self.jpg",
-	},
-	{
-		title: "Job Scraper",
-		desc: "Lightweight real-time GUI job site scraper",
-		tech: ["Python", "pandas", "BeautifulSoup4"],
-		gitlink: "//github.com/anidixit64/Job-Scraper",
-		site: "//github.com/anidixit64/Job-Scraper",
-		image: "/src/images/linguistics.jpg",
+		image: "/public/images/app_icon.png",
 	},
 ];
 
