@@ -9,8 +9,8 @@ function App() {
   const [showShimmer, setShowShimmer] = useState(false);
 
   useEffect(() => {
-    const loadTimer = setTimeout(() => setLoading(false), 3000);
-    const shimmerTimer = setTimeout(() => setShowShimmer(true), 1500);
+    const loadTimer = setTimeout(() => setLoading(false), 1000);
+    const shimmerTimer = setTimeout(() => setShowShimmer(true), 500);
 
     return () => {
       clearTimeout(loadTimer);

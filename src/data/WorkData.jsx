@@ -10,7 +10,7 @@ export const MLData = [
 		],
 		gitlink: "//github.com/anidixit64/vivre",
 		site: "https://vivre.readthedocs.io/en/latest/",
-		image: "/public/images/vivre-icon.png",
+		image: "/images/vivre-icon.png",
 	},
 	{
 		title: "Fifa Career Manager",
@@ -18,7 +18,7 @@ export const MLData = [
 		tech: ["Javascript", "HTML", "Next.js"],
 		gitlink: "https://github.com/anidixit64/fifa-manager",
 		site: "https://fifa-manager-black.vercel.app",
-		image: "/public/images/fifa-manager.png",
+		image: "/images/fifa-manager.png",
 	},
 	{
 		title: "Alexandria",
@@ -26,7 +26,7 @@ export const MLData = [
 		tech: ["Python", "Javascript", "HTML", "React.js", "CSS"],
 		gitlink: "https://github.com/anidixit64/fifa-manager",
 		site: "https://fifa-manager-black.vercel.app",
-		image: "/public/images/alexandria.png",
+		image: "/images/scroll_logo.png",
 	},
 	{
 		title: "HealthNav",
@@ -34,7 +34,7 @@ export const MLData = [
 		tech: ["Javascript", "HTML/CSS", "GoogleAPI", "Llama3", "OpenBio-LLM"],
 		gitlink: "//github.com/aarushisi/healthnav-webdev",
 		site: "//github.com/aarushisi/healthnav-webdev",
-		image: "/public/images/healthnav.png",
+		image: "/images/healthnav.png",
 	},
 	{
 		title: "Pro Interview Bot",
@@ -42,9 +42,9 @@ export const MLData = [
 		tech: ["OpenAI", "React.js", "CSS", "NLTK", "PyTorch"],
 		gitlink: "https://github.com/anidixit64/Interview-Evaluator",
 		site: "https://github.com/anidixit64/Interview-Evaluator",
-		image: "/public/images/app_icon.png",
+		image: "/images/app_icon.png",
 	},
 ];
 
 // Combine all works into a single array
-export const allWorks = [...MLData, ...FSData];
+export const allWorks = [...MLData];

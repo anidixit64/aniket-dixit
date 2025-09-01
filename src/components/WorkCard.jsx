@@ -10,13 +10,12 @@ const WorkCard = ({ w }) => {
 	const [titleFontSize, setTitleFontSize] = useState(2.6);
 	const [descFontSize, setDescFontSize] = useState(1.4);
 
-	// Function to get the correct image based on the image path
-	const getImageSrc = (imagePath) => {
-		if (imagePath.includes('linguistics')) return "/images/linguistics.jpg";
-		if (imagePath.includes('parchment')) return "/images/parchment.jpg";
-		if (imagePath.includes('self')) return "/images/self.jpg";
-		return "/images/linguistics.jpg"; // fallback
-	};
+
+
+
+
+
+
 
 	// Function to adjust font size to fit container
 	const adjustFontSize = (element, targetHeight, baseFontSize) => {
@@ -103,7 +102,7 @@ const WorkCard = ({ w }) => {
 		<div 
 			className='works-card'
 			style={{
-				backgroundImage: `url(${getImageSrc(w.image)})`,
+				backgroundImage: `url(${w.image})`,
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				backgroundRepeat: 'no-repeat'
