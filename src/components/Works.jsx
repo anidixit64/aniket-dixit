@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import WorkCard from './WorkCard';
-import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
 import { allWorks } from '../data/WorkData';
 import '../styles/Works.css';
 
@@ -63,7 +63,7 @@ const Works = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.3 }}
 					>
-						<IoChevronBack />
+						<IoChevronBackOutline />
 					</motion.button>
 
 					<div className='works-card-container'>
@@ -96,7 +96,7 @@ const Works = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.3 }}
 					>
-						<IoChevronForward />
+						<IoChevronForwardOutline />
 					</motion.button>
 				</div>
 

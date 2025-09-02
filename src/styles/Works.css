@@ -1,3 +1,8 @@
+/* Writings section background */
+#writings {
+	background-color: #642e25;
+}
+
 .works-container {
 	display: flex;
 	flex-direction: column;
@@ -116,7 +121,7 @@
 	font-family: 'Cinzel', serif;
 	font-size: 3rem;
 	font-weight: 600;
-	color: var(--brick);
+	color: var(--beige);
 	margin-bottom: 1rem;
 }
 
