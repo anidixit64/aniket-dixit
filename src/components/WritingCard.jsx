@@ -1,67 +1,83 @@
-import React from "react";
-import { FiDownload, FiFileText, FiExternalLink } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { FiFileText } from "react-icons/fi";
+import { IoOpenOutline } from "react-icons/io5";
 
-const WritingCard = ({ w, tabId }) => {
-    return (
-        <div>
-            {tabId === "react-native" ? (
-                <a
-                    href={w.app}
-                    download={w.title}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='writing-link-group'>
-                    <div className='writings-card'>
-                        <div className='writings-container'>
-                            <div className='top-writing'>
-                                <FiFileText className='writing-doc' />
-                                <div className='right'>
-                                    <a
-                                        href={w.app}
-                                        download={w.title}
-                                        target='_blank'
-                                        rel='noreferrer'
-                                        className='writing-link'>
-                                        <FiDownload />
-                                    </a>
-                                </div>
-                            </div>
-                            <div className='mid-writing'>
-                                <p className='writing-title'>{w.title}</p>
-                                <p className='writing-desc'>{w.desc}</p>
-                            </div>
-                            <div className='bottom-writing'>
-                                <small>{w.publication}</small>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            ) : (
-                <Link to={w.site} target='_blank' className='writing-link-group'>
-                    <div className='writings-card'>
-                        <div className='writings-container'>
-                            <div className='top-writing'>
-                                <FiFileText className='writing-doc' />
-                                <div className='right'>
-                                    <Link className='writing-link' to={w.site} target='_blank'>
-                                        <FiExternalLink />
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className='mid-writing'>
-                                <p className='writing-title'>{w.title}</p>
-                                <p className='writing-desc'>{w.desc}</p>
-                            </div>
-                            <div className='bottom-writing'>
-                                <small>{w.publication}</small>
-                            </div>
-                        </div>
-                    </div>
-                </Link>
-            )}
-        </div>
-    );
+const WritingCard = ({ w }) => {
+	const titleRef = useRef(null);
+	const descRef = useRef(null);
+	const [titleFontSize, setTitleFontSize] = useState(2.6);
+	const [descFontSize, setDescFontSize] = useState(1.4);
+
+	// Function to adjust font size to fit container
+	const adjustFontSize = (element, targetHeight, baseFontSize) => {
+		if (!element) return baseFontSize;
+		
+		let fontSize = baseFontSize;
+		element.style.fontSize = `${fontSize}rem`;
+		
+		while (element.scrollHeight > targetHeight && fontSize > 0.8) {
+			fontSize -= 0.1;
+			element.style.fontSize = `${fontSize}rem`;
+		}
+		
+		return fontSize;
+	};
+
+	// Adjust font sizes when component mounts or content changes
+	useEffect(() => {
+		if (titleRef.current) {
+			const newTitleSize = adjustFontSize(titleRef.current, 80, 2.6);
+			setTitleFontSize(newTitleSize);
+		}
+		
+		if (descRef.current) {
+			const newDescSize = adjustFontSize(descRef.current, 100, 1.4);
+			setDescFontSize(newDescSize);
+		}
+	}, [w.title, w.desc]);
+
+	return (
+		<div 
+			className='works-card'
+			style={{
+				backgroundImage: `url(${w.image})`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				backgroundRepeat: 'no-repeat'
+			}}
+		>
+			<div className='works-container'>
+				<div className='top-work'>
+					<div className='right'>
+						<a className='work-link' href={w.site} target='_blank' rel='noreferrer'>
+							<IoOpenOutline />
+						</a>
+					</div>
+				</div>
+				<div className='mid-work'>
+					<p 
+						ref={titleRef}
+						className='work-title'
+						style={{ fontSize: `${titleFontSize}rem` }}
+					>
+						{w.title}
+					</p>
+					<p 
+						ref={descRef}
+						className='work-desc'
+						style={{ fontSize: `${descFontSize}rem` }}
+					>
+						{w.desc}
+					</p>
+				</div>
+				<div className='bottom-work'>
+					<div className='tech-row'>
+						<small>{w.publication || 'Academic Paper'}</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default WritingCard;
